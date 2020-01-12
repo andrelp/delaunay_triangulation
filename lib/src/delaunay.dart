@@ -7,9 +7,9 @@ import 'dart:math';
 
 ///Computes a delaunay triangulation of given points
 class DelaunayTriangulation {
-  Set<Vertex> _vertecies;
-  Set<Face>   _faces;
-  Set<Edge>   _edges;
+  Set<Vertex>    _vertecies;
+  FaceCollection _faceCollection;
+  Set<Edge>      _edges;
 
   DelaunayTriangulation(Iterable<Vertex> inp) {
     var vertecies = <Vertex>{}..addAll(inp);
@@ -86,11 +86,11 @@ class DelaunayTriangulation {
 
     //init fields
     _vertecies = vertecies;
-    _faces = faceCollection.faces;
+    _faceCollection = faceCollection;
   }
 
   void _legalizeEdge(Face face, Edge edge, Vertex vertex, FaceCollection collection) {
-    var neighbouringFace = collection.findNeighbouringEdge(face, edge);
+    var neighbouringFace = collection.findNeighbouringFace(face, edge);
 
     if (neighbouringFace != null && neighbouringFace.liesWithinCircumcircle(vertex)) {
       var noneEdgeVertex = neighbouringFace.getRemainingVertex(edge);
@@ -110,7 +110,7 @@ class DelaunayTriangulation {
   }
 
   Set<Vertex> get vertecies => _vertecies;
-  Set<Face>   get faces     => _faces;
+  Set<Face>   get faces     => _faceCollection.faces;
   Set<Edge>   get edges {
     if (_edges != null) {
       return _edges;
@@ -118,4 +118,10 @@ class DelaunayTriangulation {
     _edges = faces.map((face)=>face.edges).reduce((s,t)=>s.union(t));
     return _edges;
   }
+
+  Face findContainingFace(Vertex vertex) => _faceCollection.findContainingFace(vertex);
+  Set<Face> findFacesSharingFace(Edge edge) => _faceCollection.findFacesSharingEdge(edge);
+  Face findNeighbouringFace(Face face, Edge edge)=> _faceCollection.findNeighbouringFace(face, edge);
+  Edge findNearestEdge(Vertex vertex) => _faceCollection.findNearestEdge(vertex);
+
 }

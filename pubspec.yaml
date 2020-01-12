@@ -1,12 +1,12 @@
 name: delaunay_triangulation
 description: Computes delaunay triangulation of two dimensional point set.
-version: 0.0.2
+version: 0.0.3
 author: Andre Poncelet <andre.leon.poncelet@gmail.com>
 repository: https://github.com/andrelp/delaunay_triangulation
 homepage: https://github.com/andrelp/delaunay_triangulation
 
 environment:
-  sdk: '>=2.1.0 <3.0.0'
+  sdk: '>=2.3.0 <3.0.0'
 
 dev_dependencies:
   pedantic: ^1.8.0

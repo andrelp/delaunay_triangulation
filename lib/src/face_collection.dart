@@ -40,7 +40,7 @@ class FaceCollection {
     return adjacent;
   }
 
-  Face findNeighbouringEdge(Face face, Edge edge) {
+  Face findNeighbouringFace(Face face, Edge edge) {
     var nei = findFacesSharingEdge(edge);
     nei.removeWhere((f)=>f==face);
     if (nei.isNotEmpty) {
