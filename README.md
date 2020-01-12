@@ -1,22 +1,16 @@
-A library for Dart developers.
-
-Created from templates made available by Stagehand under a BSD-style
-[license](https://github.com/dart-lang/stagehand/blob/master/LICENSE).
+Library which can compute a two-dimensional delaunay triangulation for a given set of points.
 
 ## Usage
-
-A simple usage example:
 
 ```dart
 import 'package:delaunay_triangulation/delaunay_triangulation.dart';
 
 main() {
-  var awesome = new Awesome();
+  var triangulation = DelaunayTriangulation(<Vertex>{
+    Vertex(1.1,-2.0),
+    Vertex(4.2,7.4),
+    Vertex(12,-33.44),
+    //...
+  });
 }
 ```
-
-## Features and bugs
-
-Please file feature requests and bugs at the [issue tracker][tracker].
-
-[tracker]: http://example.com/issues/replaceme

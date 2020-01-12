@@ -5,6 +5,7 @@ import 'face_collection.dart';
 import 'vertex.dart';
 import 'dart:math';
 
+///Computes a delaunay triangulation of given points
 class DelaunayTriangulation {
   Set<Vertex> _vertecies;
   Set<Face>   _faces;

@@ -1,6 +1,9 @@
 import 'vertex.dart';
 import 'dart:math';
 
+///Represents an Edge. The order of its vertecies is irrelevant and
+///two Edges are considered to be the same (by the equal operator and
+///by their hashCode) if the unordered sets of their endpoints is equal
 class Edge {
   final Vertex p,q;
   Edge(this.p, this.q);

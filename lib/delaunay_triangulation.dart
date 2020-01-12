@@ -1,6 +1,4 @@
-/// Support for doing something awesome.
-///
-/// More dartdocs go here.
+/// Library which computes a delaunay triangulation of a given point set
 library delaunay_triangulation;
 
 export 'src/delaunay.dart' show DelaunayTriangulation;

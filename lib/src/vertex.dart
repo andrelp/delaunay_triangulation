@@ -1,5 +1,6 @@
 import 'dart:math';
 
+///Representation of an two dimensional point.
 class Vertex {
   final double x,y;
   const Vertex(this.x,this.y);

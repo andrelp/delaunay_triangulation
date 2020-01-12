@@ -3,6 +3,11 @@ import 'package:delaunay_triangulation/src/util.dart';
 import 'edge.dart';
 import 'vertex.dart';
 
+///Representation of a triangular face in a triangulation
+///Order of vertecies is irrelevant and two triangles are
+///consired to be euqual (by evaluating equal operator or
+///computing hash function) if the (unoredered) sets of 
+///their three enclosing vertecies are equal.
 class Face {
   final Vertex a,b,c;
   Face(this.a,this.b,this.c);
